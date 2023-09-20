@@ -1,7 +1,12 @@
+import choiceHand from "./slices/choiceHand";
+import gameChoiceReducer from "./slices/gameChoice";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    gameChoice: gameChoiceReducer,
+    choiceHand: choiceHand,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
