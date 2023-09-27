@@ -1,6 +1,11 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setChoiceHand } from "../Redux/slices/choiceHand";
+import rulesMap from "../Data/rulesMap";
+import { RootState } from "../Redux/store";
+import { decreaseScore, increaseScore } from "../Redux/slices/score";
+import { setWinOrLoseOrDraw } from "../Redux/slices/winOrLoseOrDraw";
+import { setCompChoiceHand } from "../Redux/slices/compChoice";
 type CircleDataType = {
   outColor: string | undefined;
   inColor: string | undefined;
@@ -18,12 +23,30 @@ const Circle = ({
   width,
   hight,
 }: CircleDataType) => {
+  const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
+  const compChoice = useSelector((state: RootState) => state.compChoice.value);
+  const getResult = (choiceHand: string, compChoice: string) => {
+    if (rulesMap.get(choiceHand) == compChoice) {
+      dispatch(decreaseScore());
+      return "you lose";
+    }
+    if (choiceHand == compChoice) {
+      return "Draw";
+    }
+    dispatch(increaseScore());
+    return "you win";
+  };
   const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(setCompChoiceHand());
+    dispatch(setChoiceHand(choice));
+    dispatch(setWinOrLoseOrDraw(getResult(choice, compChoice)));
+  };
 
   return (
     <>
       <div
-        onClick={() => dispatch(setChoiceHand(choice))}
+        onClick={() => handleClick()}
         className={`relative ${
           width + " " + hight
         } mx-auto flex items-center justify-center `}
@@ -55,3 +78,6 @@ const Circle = ({
 };
 
 export default Circle;
+function dispatch(arg0: any) {
+  throw new Error("Function not implemented.");
+}

@@ -5,6 +5,7 @@ import { setGameChoice } from "../Redux/slices/gameChoice";
 
 const HeaderNav = () => {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
+  const score = useSelector((state: RootState) => state.score.value);
   const dispatch = useDispatch();
   return (
     <div
@@ -34,7 +35,7 @@ const HeaderNav = () => {
         ${gameChoice == "" && "hidden"}`}
       >
         <p className=" text-[#8697E4] text-xs font-extrabold">SCORE</p>
-        <p className="text-[#3B4363] text-4xl">0</p>
+        <p className="text-[#3B4363] text-4xl">{score}</p>
       </div>
     </div>
   );

@@ -18,7 +18,8 @@ const Rules = () => {
         RULES
       </h1>
       <div
-        className={`${!rulesVisibly && "hidden"} bg-white  p-3 rounded-md 
+        className={`${!rulesVisibly && "hidden"}
+         bg-white  p-3 rounded-md 
         fixed top-[50%] translate-y-[-50%]
       left-[50%] translate-x-[-50%] flex items-center 
       justify-center w-screen h-screen z-[10] gap-64`}

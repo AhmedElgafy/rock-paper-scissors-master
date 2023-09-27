@@ -6,7 +6,7 @@ import { RootState } from "../Redux/store";
 const GameOption = () => {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
   const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
-  console.log(gameChoice);
+  // console.log(gameChoice);
   //   ${choiceHand == "" && "hidden"}}
   //
   const isRPSchose = () => {
