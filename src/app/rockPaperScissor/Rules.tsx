@@ -4,6 +4,7 @@ import { RootState } from "../Redux/store";
 
 const Rules = () => {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
+
   const [rulesVisibly, setRulesVisibly] = useState(false);
 
   return (

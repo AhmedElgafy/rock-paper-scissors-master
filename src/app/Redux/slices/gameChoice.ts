@@ -5,7 +5,7 @@ export interface GameChoiceType {
   value: string;
 }
 const initialState: GameChoiceType = {
-  value: "rockPaperScissor",
+  value: "",
 };
 export const gameChoiceSlice = createSlice({
   name: "game choice",

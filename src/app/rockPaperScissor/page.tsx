@@ -7,6 +7,7 @@ import PlayAgain from "./playAgain";
 
 export default function Header() {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
+  const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
 
   return (
     <div
@@ -24,7 +25,8 @@ export default function Header() {
       </h1>
       <HeaderNav />
       <GameContent />
-      <PlayAgain />
+      {choiceHand != "" && <PlayAgain />}
+
       <Rules />
     </div>
   );

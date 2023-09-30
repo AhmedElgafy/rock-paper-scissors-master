@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../Redux/store";
 import { setGameChoice } from "../Redux/slices/gameChoice";
+import getResult from "../helpFuncs/getResult";
+import Link from "next/link";
 
 const HeaderNav = () => {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
+  const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
+  const compChoice = useSelector((state: RootState) => state.compChoice.value);
+  // const winLose=useSelector((state: RootState) => state..value);
   const score = useSelector((state: RootState) => state.score.value);
+
   const dispatch = useDispatch();
   return (
     <div
@@ -21,12 +27,14 @@ const HeaderNav = () => {
         alt=""
         onClick={() => dispatch(setGameChoice("rockPaperScissor"))}
       />
-      <img
-        className={`block ${gameChoice == "rockPaperScissor" && "hidden "}`}
-        src="../../logo-bonus.svg"
-        alt=""
-        onClick={() => dispatch(setGameChoice("rockPaperScissorLizardSpock"))}
-      />
+      <Link href={"./rockPaperScissorLizardSpock"}>
+        <img
+          className={`block ${gameChoice == "rockPaperScissor" && "hidden "}`}
+          src="../../logo-bonus.svg"
+          alt=""
+          onClick={() => dispatch(setGameChoice("rockPaperScissorLizardSpock"))}
+        />
+      </Link>
       <div
         className={`border-2 
         py-1 px-5 bg-white rounded-lg 

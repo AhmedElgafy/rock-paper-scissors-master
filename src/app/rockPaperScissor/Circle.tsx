@@ -36,11 +36,10 @@ const Circle = ({
     dispatch(increaseScore());
     return "you win";
   };
+
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(setCompChoiceHand());
-    dispatch(setChoiceHand(choice));
-    dispatch(setWinOrLoseOrDraw(getResult(choice, compChoice)));
+    // getResult(choiceHand, compChoice) == "you win" && dispatch(increaseScore());
   };
 
   return (
@@ -76,8 +75,4 @@ const Circle = ({
     </>
   );
 };
-
 export default Circle;
-function dispatch(arg0: any) {
-  throw new Error("Function not implemented.");
-}

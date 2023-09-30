@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface CompChoiceType {
   value: string;
@@ -7,7 +6,7 @@ export interface CompChoiceType {
 const compOptions: string[] = ["rock", "paper", "scissors"];
 
 const initialState: CompChoiceType = {
-  value: compOptions[Math.floor(Math.random() * 5) % 3],
+  value: "",
 };
 export const compChoiceSlice = createSlice({
   name: "compChoice",
@@ -16,7 +15,11 @@ export const compChoiceSlice = createSlice({
     setCompChoiceHand: (state) => {
       state.value = compOptions[Math.floor(Math.random() * 5) % 3];
     },
+    setCompChoiceHand2Default: (state) => {
+      state.value = compOptions[Math.floor(Math.random() * 5) % 3];
+    },
   },
 });
-export const { setCompChoiceHand } = compChoiceSlice.actions;
+export const { setCompChoiceHand, setCompChoiceHand2Default } =
+  compChoiceSlice.actions;
 export default compChoiceSlice.reducer;

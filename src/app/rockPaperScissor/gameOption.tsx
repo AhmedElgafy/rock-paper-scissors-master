@@ -1,11 +1,15 @@
 import React from "react";
 import Circle from "./Circle";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../Redux/store";
+import { setChoiceHand } from "../Redux/slices/choiceHand";
+import { setCompChoiceHand } from "../Redux/slices/compChoice";
 
 const GameOption = () => {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
   const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
+  const compChoice = useSelector((state: RootState) => state.compChoice.value);
+  const dispatch = useDispatch();
   // console.log(gameChoice);
   //   ${choiceHand == "" && "hidden"}}
   //
@@ -14,6 +18,10 @@ const GameOption = () => {
   };
   const isAnyHandChose = () => {
     return choiceHand != "";
+  };
+  const handleClick = (name: string): void => {
+    dispatch(setChoiceHand(name));
+    dispatch(setCompChoiceHand());
   };
 
   return (
@@ -29,6 +37,7 @@ const GameOption = () => {
           className="absolute 
         translate-x-[105px]
         translate-y-[-110px]"
+          onClick={() => handleClick("rock")}
         >
           <Circle
             width="w-28"
@@ -44,6 +53,7 @@ const GameOption = () => {
         translate-x-[35px]
         translate-y-[-30px]
         z-[10]"
+          onClick={() => handleClick("scissors")}
         >
           <Circle
             width="w-28"
@@ -62,6 +72,7 @@ const GameOption = () => {
          translate-x-[-30px]
         translate-y-[-35px]
         "
+          onClick={() => handleClick("paper")}
         >
           <Circle
             width="w-28"
