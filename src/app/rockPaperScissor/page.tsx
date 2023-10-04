@@ -1,33 +1,32 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../Redux/store";
 import GameContent from "./GameContent";
-import HeaderNav from "./HeaderNav";
+import HeaderNav from "../HeaderNav";
 import Rules from "./Rules";
 import PlayAgain from "./playAgain";
+import PageLayout from "../layoutComps/pageLayout";
 
 export default function Header() {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
   const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
 
   return (
-    <div
-      className={`flex flex-col w-[90%] ${
-        gameChoice != "" && "gap-5 mt-"
-      } mx-auto `}
-    >
-      <h1
-        className={` ${gameChoice != "" && "hidden"} 
+    <>
+      <PageLayout>
+        <h1
+          className={` ${gameChoice != "" && "hidden"} 
          pb-4  text-center 
         font-BarlowSemiCondensed 
         font-medium text-white `}
-      >
-        {"Choose which one do you want to play".toUpperCase()}
-      </h1>
-      <HeaderNav />
-      <GameContent />
-      {choiceHand != "" && <PlayAgain />}
+        >
+          {"Choose which one do you want to play".toUpperCase()}
+        </h1>
+        <HeaderNav />
+        <GameContent />
+        {choiceHand != "" && <PlayAgain />}
 
-      <Rules />
-    </div>
+        <Rules />
+      </PageLayout>
+    </>
   );
 }

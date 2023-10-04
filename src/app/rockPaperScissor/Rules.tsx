@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../Redux/store";
@@ -26,10 +27,21 @@ const Rules = () => {
       justify-center w-screen h-screen z-[10] gap-64`}
       >
         <div>
-          <h1 className="text-DarkText font-bold text-center text-3xl ">
+          <h1
+            className="text-DarkText font-bold 
+          text-center text-3xl "
+          >
             RULES
           </h1>
-          <img src="../image-rules.svg" className="my-14" alt="" />
+          <img
+            src={
+              gameChoice == "rockPaperScissor"
+                ? "../image-rules.svg"
+                : "../image-rules-bonus.svg"
+            }
+            className="my-14"
+            alt=""
+          />
           <h1
             className="text-DarkText font-semibold 
           text-center mx-auto text-3xl"

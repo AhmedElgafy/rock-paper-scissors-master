@@ -9,15 +9,11 @@ import Circle from "./Circle";
 const GamePlay = () => {
   const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
   const compChoice = useSelector((state: RootState) => state.compChoice.value);
-  const dispatch = useDispatch();
+
   const isAnyHandChose = () => {
     return choiceHand != "";
   };
 
-  useEffect(() => {
-    // dispatch(setCompChoiceHand());
-  }, [choiceHand]);
-  // console.log(compChoice);
   return (
     <>
       <div
@@ -40,7 +36,7 @@ const GamePlay = () => {
         </div>
         <div
           className="bg-DarkText
-         h-32 rounded-full w-32"
+        h-32 rounded-full w-32"
         >
           <Circle
             width="w-32"

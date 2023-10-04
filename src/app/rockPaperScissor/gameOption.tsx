@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../Redux/store";
 import { setChoiceHand } from "../Redux/slices/choiceHand";
 import { setCompChoiceHand } from "../Redux/slices/compChoice";
+import SRP_choice from "./srpChoice";
+import RPSLSchoice from "./RPSLSchoice";
 
 const GameOption = () => {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
@@ -13,77 +15,32 @@ const GameOption = () => {
   // console.log(gameChoice);
   //   ${choiceHand == "" && "hidden"}}
   //
-  const isRPSchose = () => {
-    return gameChoice == "rockPaperScissor";
+  const imgSrc = () => {
+    switch (gameChoice) {
+      case "rockPaperScissor":
+        return "../bg-triangle.svg";
+      case "rockPaperScissorLizardSpock":
+        return;
+      default:
+        return "";
+    }
   };
+
   const isAnyHandChose = () => {
     return choiceHand != "";
-  };
-  const handleClick = (name: string): void => {
-    dispatch(setChoiceHand(name));
-    dispatch(setCompChoiceHand());
   };
 
   return (
     <>
       <div
-        className={`relative w-80 
-        ${!isRPSchose() && "hidden"}
+        className={`relative w-[100%] 
         ${isAnyHandChose() && "hidden"}
-        mx-auto`}
+        `}
       >
-        <img className="mx-auto w-60" src="../bg-triangle.svg" alt="" />
-        <div
-          className="absolute 
-        translate-x-[105px]
-        translate-y-[-110px]"
-          onClick={() => handleClick("rock")}
-        >
-          <Circle
-            width="w-28"
-            hight="h-28"
-            outColor="#DC2E4E"
-            inColor="#5f252f"
-            imgSrc="../icon-rock.svg"
-            choice="rock"
-          />
-        </div>
-        <div
-          className="absolute top-0 
-        translate-x-[35px]
-        translate-y-[-30px]
-        z-[10]"
-          onClick={() => handleClick("scissors")}
-        >
-          <Circle
-            width="w-28"
-            hight="h-28"
-            outColor="hsl(39, 89%, 49%)"
-            inColor="hsl(40.16949152542374,
-               73.75%, 31.372549019607842%)"
-            imgSrc="icon-scissors.svg"
-            choice="scissors"
-          />
-        </div>
-        <div
-          className="absolute
-         top-0
-         right-0
-         translate-x-[-30px]
-        translate-y-[-35px]
-        "
-          onClick={() => handleClick("paper")}
-        >
-          <Circle
-            width="w-28"
-            hight="h-28"
-            outColor="hsl(230, 89%, 62%)"
-            inColor="hsl(229.8, 47.169811320754725%,
-               41.568627450980394%)"
-            imgSrc="../icon-paper.svg"
-            choice="paper"
-          />
-        </div>
+        <img className="mx-auto w-60" src={imgSrc()} alt="" />
+
+        {gameChoice == "rockPaperScissor" && <SRP_choice />}
+        {gameChoice == "rockPaperScissorLizardSpock" && <RPSLSchoice />}
       </div>
     </>
   );

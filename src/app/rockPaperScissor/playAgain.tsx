@@ -1,8 +1,7 @@
+"use client";
 import { useDispatch, useSelector } from "react-redux";
 import { setChoiceHand } from "../Redux/slices/choiceHand";
 import { RootState } from "../Redux/store";
-import { setCompChoiceHand2Default } from "../Redux/slices/compChoice";
-import rulesMap from "../Data/rulesMap";
 import { decreaseScore, increaseScore } from "../Redux/slices/score";
 import getResult from "../helpFuncs/getResult";
 import { useEffect } from "react";

@@ -50,7 +50,7 @@ const Circle = ({
           width + " " + hight
         } mx-auto flex items-center justify-center `}
       >
-        <svg width="391" height="411" viewBox="0 0 391 411" fill="none">
+        <svg width="391" height="130" viewBox="0 0 391 411" fill="none">
           <circle cx="195.5" cy="215.5" r="195.5" fill={`${inColor}`} />
           <circle cx="195.5" cy="195.5" r="195.5" fill={`${outColor}`} />
           <circle cx="195.5" cy="195.5" r="152.5" fill="white" />
