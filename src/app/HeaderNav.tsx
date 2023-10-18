@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./Redux/store";
 import { setGameChoice } from "./Redux/slices/gameChoice";
 import Link from "next/link";
+import { setChoiceHand } from "./Redux/slices/choiceHand";
 
 const HeaderNav = () => {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
@@ -10,12 +11,16 @@ const HeaderNav = () => {
 
   const dispatch = useDispatch();
 
+  const resetBottom = () => {
+    dispatch(setGameChoice(""));
+    dispatch(setChoiceHand(""));
+  };
   return (
     <>
       {gameChoice != "" && (
         <img
           className="w-5 mx-auto"
-          onClick={() => dispatch(setGameChoice(""))}
+          onClick={() => resetBottom()}
           src="../../home_Icon.jpg"
           alt=""
         />
@@ -26,16 +31,14 @@ const HeaderNav = () => {
       border-[#606E85] items-center justify-between
        hsl(217, 16%, 45%)  w-[90%] mx-auto"
       >
-        <Link href="/rockPaperScissor">
-          <img
-            className={`block w-[50%] ${
-              gameChoice == "rockPaperScissorLizardSpock" ? "hidden" : "w-[40%]"
-            }`}
-            src="../../logo.svg"
-            alt=""
-            onClick={() => dispatch(setGameChoice("rockPaperScissor"))}
-          />
-        </Link>
+        <img
+          className={`block w-[50%] ${
+            gameChoice == "rockPaperScissorLizardSpock" ? "hidden" : "w-[40%]"
+          }`}
+          src="../../logo.svg"
+          alt=""
+          onClick={() => dispatch(setGameChoice("rockPaperScissor"))}
+        />
         <img
           className={`block w-[30%] ${
             gameChoice == "rockPaperScissor" && "hidden "

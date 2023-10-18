@@ -1,13 +1,12 @@
 import rulesMap from "../Data/rulesMap";
 const getResult = (choiceHand: string, compChoice: string) => {
-  if (rulesMap.get(choiceHand) == compChoice) {
-    // dispatch(decreaseScore());
-    return "you lose";
+  //if compChoice beat choiceHand return you lose.
+  if (rulesMap.get(choiceHand).find((ele: string) => ele == compChoice)) {
+    return "you win";
   }
   if (choiceHand == compChoice) {
     return "Draw";
   }
-  // dispatch(increaseScore());
-  return "you win";
+  return "you lose";
 };
 export default getResult;

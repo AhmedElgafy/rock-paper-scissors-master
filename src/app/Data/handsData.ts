@@ -21,7 +21,7 @@ const handsData = {
     name: "lizard",
     outColor: "#834fe5",
     imgSrc: "../icon-lizard.svg",
-    inColor: "#834fe5",
+    inColor: "#583a91",
   },
   spock: {
     name: "spock",

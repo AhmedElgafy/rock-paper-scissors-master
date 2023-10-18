@@ -8,6 +8,10 @@ const getHandData = (choose: string | number) => {
       return handsData.paper;
     case "scissors":
       return handsData.scissors;
+    case "lizard":
+      return handsData.lizard;
+    case "spock":
+      return handsData.spock;
   }
 };
 export default getHandData;

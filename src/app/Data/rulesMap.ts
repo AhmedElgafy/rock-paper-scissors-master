@@ -3,7 +3,16 @@
 //Scissor lose from rock.
 
 const rulesMap = new Map();
-rulesMap.set("rock", "paper");
-rulesMap.set("paper", "scissors");
-rulesMap.set("scissors", "rock");
+//rock beat scissors,lizard
+//paper beat rock,spock
+//scissors beat paper,lizard
+//spock beat rock,scissors
+//lizard beat spock,paper
+
+rulesMap.set("rock", ["scissors", "lizard"]);
+rulesMap.set("paper", ["rock", "spock"]);
+rulesMap.set("scissors", ["paper", "lizard"]);
+rulesMap.set("spock", ["rock", "scissors"]);
+rulesMap.set("lizard", ["spock", "paper"]);
+console.log(rulesMap.get("lizard"));
 export default rulesMap;

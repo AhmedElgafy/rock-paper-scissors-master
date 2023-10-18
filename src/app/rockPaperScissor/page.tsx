@@ -22,9 +22,7 @@ export default function Header() {
           {"Choose which one do you want to play".toUpperCase()}
         </h1>
         <HeaderNav />
-        <GameContent />
-        {choiceHand != "" && <PlayAgain />}
-
+        {gameChoice == "" ? null : <GameContent />}
         <Rules />
       </PageLayout>
     </>

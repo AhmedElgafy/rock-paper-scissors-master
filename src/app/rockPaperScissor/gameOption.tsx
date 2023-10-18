@@ -20,7 +20,7 @@ const GameOption = () => {
       case "rockPaperScissor":
         return "../bg-triangle.svg";
       case "rockPaperScissorLizardSpock":
-        return;
+        return "../bg-pentagon.svg";
       default:
         return "";
     }
@@ -33,11 +33,11 @@ const GameOption = () => {
   return (
     <>
       <div
-        className={`relative w-[100%] 
+        className={`relative my-10 mb-20 w-[100%] 
         ${isAnyHandChose() && "hidden"}
         `}
       >
-        <img className="mx-auto w-60" src={imgSrc()} alt="" />
+        <img className="mx-auto w-60 " src={imgSrc()} alt="" />
 
         {gameChoice == "rockPaperScissor" && <SRP_choice />}
         {gameChoice == "rockPaperScissorLizardSpock" && <RPSLSchoice />}

@@ -11,7 +11,6 @@ const palyAgain = () => {
   const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
   const compChoice = useSelector((state: RootState) => state.compChoice.value);
   useEffect(() => {
-    console.log("hi");
     getResult(choiceHand, compChoice) == "you win" && dispatch(increaseScore());
     getResult(choiceHand, compChoice) == "you lose" &&
       dispatch(decreaseScore());
