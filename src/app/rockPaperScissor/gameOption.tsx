@@ -37,7 +37,7 @@ const GameOption = () => {
         ${isAnyHandChose() && "hidden"}
         `}
       >
-        <img className="mx-auto w-60 " src={imgSrc()} alt="" />
+        <img className="mx-auto w-[100%] " src={imgSrc()} alt="" />
 
         {gameChoice == "rockPaperScissor" && <SRP_choice />}
         {gameChoice == "rockPaperScissorLizardSpock" && <RPSLSchoice />}

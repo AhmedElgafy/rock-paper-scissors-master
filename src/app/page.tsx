@@ -5,7 +5,7 @@ import { store } from "./Redux/store";
 
 export default function Home() {
   return (
-    <main className="h-screen flex items-center justify-center">
+    <main className="h-screen w-[80%] mx-auto  flex justify-center items-center ">
       <Provider store={store}>
         <Header />,
       </Provider>

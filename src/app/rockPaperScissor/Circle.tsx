@@ -23,21 +23,6 @@ const Circle = ({
   width,
   hight,
 }: CircleDataType) => {
-  const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
-  const compChoice = useSelector((state: RootState) => state.compChoice.value);
-  const getResult = (choiceHand: string, compChoice: string) => {
-    if (rulesMap.get(choiceHand) == compChoice) {
-      dispatch(decreaseScore());
-      return "you lose";
-    }
-    if (choiceHand == compChoice) {
-      return "Draw";
-    }
-    dispatch(increaseScore());
-    return "you win";
-  };
-
-  const dispatch = useDispatch();
   const handleClick = () => {
     // getResult(choiceHand, compChoice) == "you win" && dispatch(increaseScore());
   };
@@ -50,7 +35,7 @@ const Circle = ({
           width + " " + hight
         } mx-auto flex cursor-pointer items-center justify-center `}
       >
-        <svg width="391" height="130" viewBox="0 0 391 411" fill="none">
+        <svg width="360" height="360" viewBox="0 0 391 411" fill="none">
           <circle cx="195.5" cy="215.5" r="195.5" fill={`${inColor}`} />
           <circle cx="195.5" cy="195.5" r="195.5" fill={`${outColor}`} />
           <circle cx="195.5" cy="195.5" r="152.5" fill="white" />
@@ -70,7 +55,7 @@ const Circle = ({
             fill="#BBBCD4"
           />
         </svg>
-        <img src={`${imgSrc}`} className="absolute z-[10]" alt="" />
+        <img src={`${imgSrc}`} className="absolute z-[10] w-[50%]" alt="" />
       </div>
     </>
   );

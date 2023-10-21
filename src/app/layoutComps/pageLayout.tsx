@@ -8,17 +8,7 @@ type Props = {
 };
 const PageLayout = ({ children }: Props) => {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
-  return (
-    <div>
-      <div
-        className={`flex flex-col w-[90%] ${
-          gameChoice != "" && "gap-5 mt-"
-        } mx-auto `}
-      >
-        {children}
-      </div>
-    </div>
-  );
+  return <div className={` md:w-[70%] `}>{children}</div>;
 };
 
 export default PageLayout;

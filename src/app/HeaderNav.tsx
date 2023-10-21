@@ -27,12 +27,13 @@ const HeaderNav = () => {
       )}
 
       <div
-        className="  flex gap-4 border-2 p-5 mb-10 rounded-lg 
+        className="  flex  gap-4 border-2 p-5 
+         mb-10 rounded-lg 
       border-[#606E85] items-center justify-between
-       hsl(217, 16%, 45%)  w-[90%] mx-auto"
+       hsl(217, 16%, 45%)  w-[90%] mx-auto "
       >
         <img
-          className={`block w-[50%] ${
+          className={`block  w-[30%] ${
             gameChoice == "rockPaperScissorLizardSpock" ? "hidden" : "w-[40%]"
           }`}
           src="../../logo.svg"
@@ -40,7 +41,7 @@ const HeaderNav = () => {
           onClick={() => dispatch(setGameChoice("rockPaperScissor"))}
         />
         <img
-          className={`block w-[30%] ${
+          className={`block w-[30%]  ${
             gameChoice == "rockPaperScissor" && "hidden "
           }`}
           src="../../logo-bonus.svg"

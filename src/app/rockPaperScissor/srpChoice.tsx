@@ -11,15 +11,17 @@ const SRP_choice = () => {
     dispatch(setCompChoiceHand());
   };
   return (
-    <div>
+    <>
       <div
         className="absolute 
-        translate-x-[90px]
-        translate-y-[-110px]"
+        right-[50%]
+        top-[83%]
+        w-[90%]
+        translate-x-[50%]"
         onClick={() => handleClick("rock")}
       >
         <Circle
-          width="w-28"
+          width="w-[50%]"
           hight="h-28"
           outColor="#DC2E4E"
           inColor="#5f252f"
@@ -28,15 +30,17 @@ const SRP_choice = () => {
         />
       </div>
       <div
-        className="absolute top-0 
-        translate-x-[8px]
-        translate-y-[-30px]
+        className="absolute 
+        top-[-10px]
+        left-[10px]
+        w-[90%]
+        
         z-[10]"
         onClick={() => handleClick("scissors")}
       >
         <Circle
-          width="w-28"
-          hight="h-28"
+          width="w-[50%]"
+          // hight="h-28"
           outColor="hsl(39, 89%, 49%)"
           inColor="hsl(40.16949152542374,
               73.75%, 31.372549019607842%)"
@@ -46,15 +50,15 @@ const SRP_choice = () => {
       </div>
       <div
         className="absolute
-         top-0
-         right-0
-         translate-x-[-15px]
-        translate-y-[-35px]
+        top-[-10px]
+        right-[-10px]
+        w-[90%]
+
         "
         onClick={() => handleClick("paper")}
       >
         <Circle
-          width="w-28"
+          width="w-[50%]"
           hight="h-28"
           outColor="hsl(230, 89%, 62%)"
           inColor="hsl(229.8, 47.169811320754725%,
@@ -63,7 +67,7 @@ const SRP_choice = () => {
           choice="paper"
         />
       </div>
-    </div>
+    </>
   );
 };
 
