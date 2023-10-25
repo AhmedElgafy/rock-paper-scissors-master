@@ -15,13 +15,14 @@ const RPSLSchoice = () => {
     <div>
       <div
         className="absolute 
-        translate-x-[-25px]
-        translate-y-[-50px]"
+        bottom-0
+        translate-y-[50%]
+        w-[45%]
+        "
         onClick={() => handleClick("rock")}
       >
         <Circle
-          width="w-28"
-          hight="h-28"
+          width="0"
           outColor={"#DC2E4E"}
           inColor="#5f252f"
           imgSrc="../icon-rock.svg"
@@ -30,14 +31,15 @@ const RPSLSchoice = () => {
       </div>
       <div
         className="absolute top-0 
-        translate-x-[-55px]
-        translate-y-[25px]
-        z-[10]"
+        translate-x-[-50%]
+        translate-y-[50%]
+        w-[45%]
+        z-[5]"
         onClick={() => handleClick("scissors")}
       >
         <Circle
-          width="w-28"
-          hight="h-28"
+          width="0"
+          // hight="h-28"
           outColor="hsl(39, 89%, 49%)"
           inColor="hsl(40.16949152542374,
               73.75%, 31.372549019607842%)"
@@ -48,15 +50,16 @@ const RPSLSchoice = () => {
       <div
         className="absolute
          top-0
-         right-0
-         translate-x-[-55px]
-        translate-y-[-60px]
+         left-[50%]
+         w-[45%]
+         translate-x-[-50%]
+         translate-y-[-50%]
         "
         onClick={() => handleClick("paper")}
       >
         <Circle
-          width="w-28"
-          hight="h-28"
+          width="0"
+          // hight="h-28"
           outColor="hsl(230, 89%, 62%)"
           inColor="hsl(229.8, 47.169811320754725%,
                41.568627450980394%)"
@@ -66,16 +69,17 @@ const RPSLSchoice = () => {
       </div>
       <div
         className="absolute
-         top-0
+        w-[45%]
+         top-0 
          right-0
-         translate-x-[55px]
-        translate-y-[25px]
+        translate-x-[50%]
+        translate-y-[50%]
         "
         onClick={() => handleClick("lizard")}
       >
         <Circle
-          width="w-28"
-          hight="h-28"
+          width="0"
+          // hight="h-28"
           outColor={getHandData("lizard")?.outColor}
           inColor={getHandData("lizard")?.inColor}
           imgSrc={getHandData("lizard")?.imgSrc}
@@ -84,16 +88,16 @@ const RPSLSchoice = () => {
       </div>
       <div
         className="absolute
-         top-0
+         bottom-0
+         translate-y-[50%]
          right-0
-         translate-x-[25px]
-        translate-y-[165px]
+         w-[45%]
         "
         onClick={() => handleClick("spock")}
       >
         <Circle
-          width="w-28"
-          hight="h-28"
+          width="0"
+          // hight="h-28"
           outColor={getHandData("spock")?.outColor}
           inColor={getHandData("spock")?.inColor}
           imgSrc={getHandData("spock")?.imgSrc}

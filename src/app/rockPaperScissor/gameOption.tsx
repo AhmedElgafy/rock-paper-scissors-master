@@ -33,11 +33,11 @@ const GameOption = () => {
   return (
     <>
       <div
-        className={`relative my-10 mb-20 w-[100%] 
+        className={`relative order-3  my-10 mb-16 mx-auto  max-w-[80%] 
         ${isAnyHandChose() && "hidden"}
         `}
       >
-        <img className="mx-auto w-[100%] " src={imgSrc()} alt="" />
+        <img className="mx-auto   " src={imgSrc()} alt="" />
 
         {gameChoice == "rockPaperScissor" && <SRP_choice />}
         {gameChoice == "rockPaperScissorLizardSpock" && <RPSLSchoice />}

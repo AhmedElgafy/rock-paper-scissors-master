@@ -19,7 +19,7 @@ const HeaderNav = () => {
     <>
       {gameChoice != "" && (
         <img
-          className="w-5 mx-auto"
+          className="w-5 mx-auto order-1"
           onClick={() => resetBottom()}
           src="../../home_Icon.jpg"
           alt=""
@@ -27,10 +27,10 @@ const HeaderNav = () => {
       )}
 
       <div
-        className="  flex  gap-4 border-2 p-5 
-         mb-10 rounded-lg 
+        className=" order-2 flex  gap-4 border-2 p-5 mb-9 
+        rounded-lg my-16 mt-2
       border-[#606E85] items-center justify-between
-       hsl(217, 16%, 45%)  w-[90%] mx-auto "
+       hsl(217, 16%, 45%)  mx-auto "
       >
         <img
           className={`block  w-[30%] ${
@@ -50,9 +50,10 @@ const HeaderNav = () => {
         />
         <div
           className={`border-2 
-        py-1 px-5 bg-white rounded-lg 
-       text-center
+        p-5 bg-white rounded-lg 
+       text-center 
        text-white font-semibold 
+       w-
         ${gameChoice == "" && "hidden"}`}
         >
           <p className=" text-[#8697E4] text-xs font-extrabold">SCORE</p>

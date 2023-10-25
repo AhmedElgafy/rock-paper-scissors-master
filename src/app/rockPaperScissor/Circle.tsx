@@ -12,7 +12,7 @@ type CircleDataType = {
   imgSrc: string | undefined;
   choice: string | undefined;
   width: string | undefined;
-  hight: string | undefined;
+  // hight: string | undefined;
 };
 
 const Circle = ({
@@ -21,8 +21,8 @@ const Circle = ({
   inColor,
   imgSrc,
   width,
-  hight,
-}: CircleDataType) => {
+}: // hight,
+CircleDataType) => {
   const handleClick = () => {
     // getResult(choiceHand, compChoice) == "you win" && dispatch(increaseScore());
   };
@@ -32,10 +32,10 @@ const Circle = ({
       <div
         onClick={() => handleClick()}
         className={`relative ${
-          width + " " + hight
+          width + " "
         } mx-auto flex cursor-pointer items-center justify-center `}
       >
-        <svg width="360" height="360" viewBox="0 0 391 411" fill="none">
+        <svg width="" height="" viewBox="0 0 391 411" fill="none">
           <circle cx="195.5" cy="215.5" r="195.5" fill={`${inColor}`} />
           <circle cx="195.5" cy="195.5" r="195.5" fill={`${outColor}`} />
           <circle cx="195.5" cy="195.5" r="152.5" fill="white" />
@@ -55,7 +55,7 @@ const Circle = ({
             fill="#BBBCD4"
           />
         </svg>
-        <img src={`${imgSrc}`} className="absolute z-[10] w-[50%]" alt="" />
+        <img src={`${imgSrc}`} className="absolute z-[10] w-[35%]" alt="" />
       </div>
     </>
   );

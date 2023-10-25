@@ -17,7 +17,17 @@ const palyAgain = () => {
   }, []);
 
   return (
-    <div className={`${choiceHand == "" && "hidden"} z-10`}>
+    <div
+      className={`${choiceHand == "" && "hidden"} 
+       md:col-span-2 md:col-start-2 
+      md:col-end-4 z-10
+      md:row-auto
+      md:w-auto
+      col-span-4
+      row-start-2
+      my-auto
+      `}
+    >
       <h1 className="text-white font-bold text-5xl my-3 text-center">
         {getResult(choiceHand, compChoice).toUpperCase()}
       </h1>
@@ -28,10 +38,11 @@ const palyAgain = () => {
         }}
       >
         <h1
-          className="text-blue-900 bg-white font-semibold
+          className="text-blue-900 
+           bg-white font-semibold
   flex items-center justify-center 
   text-center border-2 p-5 rounded-lg 
-  w-60 h-10 mx-auto  tracking-normal"
+  w-60  h-10 mx-auto  tracking-normal"
         >
           PLAY AGAIN
         </h1>

@@ -7,7 +7,6 @@ import PageLayout from "../layoutComps/pageLayout";
 
 export default function Header() {
   const gameChoice = useSelector((state: RootState) => state.gameChoice.value);
-
   return (
     <>
       <PageLayout>
