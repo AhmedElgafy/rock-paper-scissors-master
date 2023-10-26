@@ -6,7 +6,7 @@ import { decreaseScore, increaseScore } from "../Redux/slices/score";
 import getResult from "../helpFuncs/getResult";
 import { useEffect } from "react";
 
-const palyAgain = () => {
+const PlayAgain = () => {
   const dispatch = useDispatch();
   const choiceHand = useSelector((state: RootState) => state.choiceHand.value);
   const compChoice = useSelector((state: RootState) => state.compChoice.value);
@@ -54,4 +54,4 @@ const palyAgain = () => {
   );
 };
 
-export default palyAgain;
+export default PlayAgain;
