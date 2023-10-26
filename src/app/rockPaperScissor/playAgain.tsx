@@ -28,7 +28,10 @@ const palyAgain = () => {
       my-auto
       `}
     >
-      <h1 className="text-white font-bold text-5xl my-3 text-center">
+      <h1
+        className="text-white font-bold
+      text-5xl my-3 text-center"
+      >
         {getResult(choiceHand, compChoice).toUpperCase()}
       </h1>
       <div
@@ -38,7 +41,7 @@ const palyAgain = () => {
         }}
       >
         <h1
-          className="text-blue-900 
+          className="text-blue-900 cursor-pointer
            bg-white font-semibold
   flex items-center justify-center 
   text-center border-2 p-5 rounded-lg 

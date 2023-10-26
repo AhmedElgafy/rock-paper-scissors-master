@@ -19,4 +19,16 @@ const Celebration = ({ opacity, key, size }: CelebrationProps) => {
   );
 };
 
-export default Celebration;
+const Celebrating = () => {
+  return (
+    <>
+      <Celebration key={1} opacity={"opacity-[.05]"} size={"scale-[50%]"} />
+      <Celebration key={2} opacity={"opacity-[.06]"} size={"scale-[60%]"} />
+      <Celebration key={3} opacity={"opacity-[.07]"} size={"scale-[70%]"} />
+    </>
+  );
+};
+
+export default Celebrating;
+
+// export default Celebration;

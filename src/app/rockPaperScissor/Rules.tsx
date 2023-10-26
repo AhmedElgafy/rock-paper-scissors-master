@@ -46,7 +46,7 @@ const Rules = () => {
             alt=""
           />
           <h1
-            className="text-DarkText font-semibold 
+            className="text-DarkText cursor-pointer font-semibold 
           text-center mx-auto text-3xl"
             onClick={() => setRulesVisibly(false)}
           >
