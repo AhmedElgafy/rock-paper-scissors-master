@@ -1,5 +1,5 @@
 "use client";
-import Header from "./rockPaperScissor/page";
+import Header from "./rockPaperScissor/Header";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 
