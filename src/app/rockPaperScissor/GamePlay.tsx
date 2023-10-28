@@ -60,7 +60,9 @@ const GamePlay = () => {
           md:col-start-4"
         >
           <p
-            className="text-center mb-2 text-white md:text-sm text-xs font-bold tracking-wide font-BarlowSemiCondensed
+            className="text-center mb-2 text-white md:text-sm
+             text-xs font-bold tracking-wide
+              font-BarlowSemiCondensed
           "
           >
             THE HOUSE PICKED
